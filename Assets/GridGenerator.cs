@@ -6,8 +6,13 @@ public class GridGenerator : MonoBehaviour
     [SerializeField] GameObject[] backgroundPrefabs;
     GameObject[][] backgroundGrid;
 
+
+    private GameObject grid;
+
     private void Start()
     {
+        grid = new GameObject("Grid");
+
         GenerateGrid(5,5);
     }
 
@@ -27,11 +32,18 @@ public class GridGenerator : MonoBehaviour
             {
                 int random = Random.Range(0, backgroundPrefabs.Length);
                 Vector2 position = new Vector2(i, j);
-                backgroundGrid[i][j] = Instantiate(backgroundPrefabs[random], position, Quaternion.identity);
+                backgroundGrid[i][j] = Instantiate(backgroundPrefabs[random], position, Quaternion.identity, grid.transform);
+                backgroundGrid[i][j].name = "Background["+i+"]["+j+"]";
             }
         }
+    }
 
+    public bool IsTileEmpty(int x, int y)
+    {
+        if (x < 0 || x >= backgroundGrid.Length || y < 0 || y >= backgroundGrid[x].Length)
+            return false;
 
+        return true;
     }
 
 }
