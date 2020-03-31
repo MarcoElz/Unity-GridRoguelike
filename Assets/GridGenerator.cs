@@ -2,17 +2,17 @@
 
 public class GridGenerator : MonoBehaviour
 {
-
     [SerializeField] GameObject[] backgroundPrefabs;
+
+    [SerializeField] GameObject playerPrefab;
+    [SerializeField] GameObject exitPrefab;
+
     GameObject[][] backgroundGrid;
-
-
     private GameObject grid;
 
     private void Start()
     {
         grid = new GameObject("Grid");
-
         GenerateGrid(5,5);
     }
 
@@ -36,6 +36,10 @@ public class GridGenerator : MonoBehaviour
                 backgroundGrid[i][j].name = "Background["+i+"]["+j+"]";
             }
         }
+
+        //Spawn Player & Exit
+        Instantiate(playerPrefab, new Vector3(0f, 0f, 0f), Quaternion.identity);
+        Instantiate(exitPrefab, new Vector3(x-1f, y-1f, 0f), Quaternion.identity);
     }
 
     public bool IsTileEmpty(int x, int y)
