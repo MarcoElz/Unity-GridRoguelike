@@ -233,7 +233,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77247eb8c17bf9b48a99dfa9147de073, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroundPrefabs:
+  backgroundMapPrefab:
   - {fileID: 3460425804682927926, guid: 5cd943231ef285b409ad3ac48bbf644f, type: 3}
   playerPrefab: {fileID: 4896696478090864180, guid: 5a818f116715fe6409e142f1d58d3863,
     type: 3}

@@ -36,7 +36,7 @@ public class Player : MonoBehaviour
     private void Move(int x, int y)
     {
         //TODO:Clean code
-        if(FindObjectOfType<GridGenerator>().IsTileEmpty((int)(transform.position.x + x), (int)(transform.position.y + y)))
+        if(FindObjectOfType<Map>().IsTileEmpty((int)(transform.position.x + x), (int)(transform.position.y + y)))
         {
             Vector3 direction = new Vector3(x, y, 0f);
             transform.position += direction;
