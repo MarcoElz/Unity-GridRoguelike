@@ -3,6 +3,7 @@
 public class Map : MonoBehaviour
 {
     [SerializeField] GameObject[] backgroundMapPrefab;
+    [SerializeField] GameObject[] wallPrefab;
 
     [SerializeField] GameObject playerPrefab;
     [SerializeField] GameObject exitPrefab;
@@ -43,16 +44,34 @@ public class Map : MonoBehaviour
         GameObject player = Instantiate(playerPrefab, new Vector3(0f, 0f, 0f), Quaternion.identity);
         GameObject exit =  Instantiate(exitPrefab, new Vector3(x-1f, y-1f, 0f), Quaternion.identity);
 
-        mapTiles[0][0].AddNewTileToTheList(player.GetComponent<GameTile>());
+        //mapTiles[0][0].AddNewTileToTheList(player.GetComponent<GameTile>());
         mapTiles[x - 1][y - 1].AddNewTileToTheList(exit.GetComponent<GameTile>());
+
+        //Pared fija. TODO: Hacer mapa random
+        GameObject wall = Instantiate(wallPrefab[0], new Vector3(2f, 2f, 0f), Quaternion.identity);
+        mapTiles[2][2].AddNewTileToTheList(wall.GetComponent<GameTile>());
     }
 
     public bool IsTileEmpty(int x, int y)
     {
+        //Si esta dentro de los limite del mapa
         if (x < 0 || x >= mapTiles.Length || y < 0 || y >= mapTiles[x].Length)
             return false;
 
+        //Si la tile tiene un objeto que no se puede atravesar
+        if (mapTiles[x][y] != null && mapTiles[x][y].HasPhysicalTile())
+        {
+            return false;
+        }
+
+        //Si la tile tiene algun personaje
+        if(Character.IsAnyCharacterAt(x,y))
+        {
+            return false;
+        }
+
         return true;
     }
+
 
 }

@@ -14,4 +14,17 @@ public class MapTile : MonoBehaviour
     {
         tiles.Add(tile);
     }
+
+    public bool HasPhysicalTile()
+    {
+        for(int i = 0; i < tiles.Count; i++)
+        {
+            if(tiles[i].Type.Equals(TileType.Physical))
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
 }
