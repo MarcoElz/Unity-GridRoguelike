@@ -19,8 +19,8 @@ public class MapTile : MonoBehaviour
     {
         for(int i = 0; i < tiles.Count; i++)
         {
-            if(tiles[i].Type.Equals(TileType.Physical))
-            {
+            if(tiles[i] is PhysicalTile)
+            { 
                 return true;
             }
         }

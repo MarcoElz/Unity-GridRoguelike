@@ -40,6 +40,15 @@ public class Player : Character
         {
             Vector3 direction = new Vector3(x, y, 0f);
             transform.position += direction;
+
+            //Hay algo en mi Tile?
+            //SI
+              //Que hay?
+                // Item/Collectable - Lo tomamos
+                // CharcoDeVeneno/Static - Nos hace daño
+
+            //NO
+              //Pues no pasa nada
         }
     }
 }
