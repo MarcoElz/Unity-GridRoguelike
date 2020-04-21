@@ -27,4 +27,19 @@ public class MapTile : MonoBehaviour
 
         return false;
     }
+
+    public void EffectTiles()
+    {
+        for (int i = 0; i < tiles.Count; i++) // Iterar en cada GameTile de esta MapTile
+        {
+            //Aplicar el efecto de la tile (sin importar que tipo es)
+            tiles[i].ApplyEffects();
+
+            if (tiles[i] is CollectableTile) //Si es un CollectableTile
+            {
+                //Remover el collectable porque se supone que lo agarramos
+                tiles.RemoveAt(i);
+            }
+        }
+    }
 }

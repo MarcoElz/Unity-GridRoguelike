@@ -241,6 +241,8 @@ MonoBehaviour:
     type: 3}
   exitPrefab: {fileID: 4114008142548970499, guid: 30b2e2cd23fa6134aaabe313286dd804,
     type: 3}
+  foodPrefab: {fileID: 3397637050104813201, guid: e07326036ecfac445a012871092f4bea,
+    type: 3}
 --- !u!4 &1102378350
 Transform:
   m_ObjectHideFlags: 0

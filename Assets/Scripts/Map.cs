@@ -7,6 +7,7 @@ public class Map : MonoBehaviour
 
     [SerializeField] GameObject playerPrefab;
     [SerializeField] GameObject exitPrefab;
+    [SerializeField] GameObject foodPrefab;
 
     MapTile[][] mapTiles;
 
@@ -50,6 +51,21 @@ public class Map : MonoBehaviour
         //Pared fija. TODO: Hacer mapa random
         GameObject wall = Instantiate(wallPrefab[0], new Vector3(2f, 2f, 0f), Quaternion.identity);
         mapTiles[2][2].AddNewTileToTheList(wall.GetComponent<GameTile>());
+        //Food fijo. TODO: Hacer mapa random
+        GameObject food = Instantiate(foodPrefab, new Vector3(3f, 3f, 0f), Quaternion.identity);
+        mapTiles[3][3].AddNewTileToTheList(food.GetComponent<GameTile>());
+
+        IDamageable playerDamageable = player.GetComponent<IDamageable>();
+        IDamageable wallDamageable = wall.GetComponent<IDamageable>();
+
+        IDamageable[] damageables = new IDamageable[2];
+        damageables[0] = playerDamageable;
+        damageables[1] = wallDamageable;
+
+        for(int i = 0; i < damageables.Length; i++)
+        {
+            damageables[i].Damage(5);
+        }
     }
 
     public bool IsTileEmpty(int x, int y)
@@ -71,6 +87,14 @@ public class Map : MonoBehaviour
         }
 
         return true;
+    }
+
+    public void ApplyEffectsOnTile(int x, int y)
+    {
+        if (mapTiles[x][y] != null) //Existe el MapTile
+        {
+            mapTiles[x][y].EffectTiles(); //Aplicar los Efectos
+        } 
     }
 
 
