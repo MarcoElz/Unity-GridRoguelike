@@ -2,6 +2,7 @@
 
 Grid-based Roguelike for teaching programming in Unity3d to my students.
 It's made for a **Basic-Intermediate Level**. 
+Inspired by [Unity's Official 2D Roguelike Tutorial](https://learn.unity.com/project/2d-roguelike-tutorial) but with a lot of software architecture differences, and a bigger scope.
 
 ### Requirements
 * You should be able to write basic C#.
@@ -13,9 +14,6 @@ It's made for a **Basic-Intermediate Level**.
 * Inheritance
 * Interfaces
 * Scriptable Objects
-
-### Inspired By
-[Unity's Official 2D Roguelike Tutorial](https://learn.unity.com/project/2d-roguelike-tutorial) but with a lot of software architecture differences, and a bigger scope.
 
 ### Other Class Projects
 * [Basic 3D Game - Introductory Level](https://github.com/MarcoElz/Unity-Basic3D)
