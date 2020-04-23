@@ -14,5 +14,8 @@ It's made for a **Basic-Intermediate Level**.
 * Interfaces
 * Scriptable Objects
 
+### Inspired By
+[Unity's Official 2D Roguelike Tutorial](https://learn.unity.com/project/2d-roguelike-tutorial) but with a lot of software architecture differences, and a bigger scope.
+
 ### Other Class Projects
 * [Basic 3D Game - Introductory Level](https://github.com/MarcoElz/Unity-Basic3D)
