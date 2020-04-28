@@ -28,16 +28,17 @@ public class MapTile : MonoBehaviour
         return false;
     }
 
-    public void EffectTiles()
+    public void ApplyEffectsOfTheTile(Character characterToApplyEffect)
     {
         for (int i = 0; i < tiles.Count; i++) // Iterar en cada GameTile de esta MapTile
         {
             //Aplicar el efecto de la tile (sin importar que tipo es)
-            tiles[i].ApplyEffects();
+            tiles[i].ApplyEffects(characterToApplyEffect);
 
             if (tiles[i] is CollectableTile) //Si es un CollectableTile
             {
                 //Remover el collectable porque se supone que lo agarramos
+                Destroy(tiles[i].gameObject);
                 tiles.RemoveAt(i);
             }
         }

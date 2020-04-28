@@ -8,11 +8,11 @@ public class Item : ScriptableObject
 
     [SerializeField] Effect[] effects;
 
-    public void Use()
+    public void Use(Character character)
     {
         for(int i = 0; i < effects.Length; i++)
         {
-            effects[i].Apply();
+            effects[i].Apply(character);
         }
     }
 }

@@ -89,11 +89,11 @@ public class Map : MonoBehaviour
         return true;
     }
 
-    public void ApplyEffectsOnTile(int x, int y)
+    public void ApplyEffectsOnTile(int x, int y, Character characterToApplyEffect)
     {
         if (mapTiles[x][y] != null) //Existe el MapTile
         {
-            mapTiles[x][y].EffectTiles(); //Aplicar los Efectos
+            mapTiles[x][y].ApplyEffectsOfTheTile(characterToApplyEffect); //Aplicar los Efectos
         } 
     }
 

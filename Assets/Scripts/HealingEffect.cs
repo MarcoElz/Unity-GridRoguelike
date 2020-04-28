@@ -5,10 +5,11 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Effect_Name", menuName = "Roguelike/Effects/HealEffects", order = 1)]
 public class HealingEffect : Effect
 {
-    [SerializeField] float healPoints;
+    [SerializeField] int healPoints;
 
-    public override void Apply()
+    public override void Apply(Character characterAppliedTo)
     {
-        Debug.Log("Healing: " + healPoints);
+        if(characterAppliedTo is Player)
+            ((Player)characterAppliedTo).Heal(healPoints);
     }
 }

@@ -2,7 +2,7 @@
 
 public class PhysicalTile : GameTile
 {
-    public override void ApplyEffects()
+    public override void ApplyEffects(Character character)
     {
         
     }

@@ -2,7 +2,13 @@
 
 public class Player : Character, IDamageable
 {
-    public int HP { get; set; }
+    public int HP { get; private set; }
+
+
+    private void Awake()
+    {
+        HP = 100;
+    }
 
     private void Update()
     {
@@ -48,7 +54,7 @@ public class Player : Character, IDamageable
                 transform.position += direction;
 
                 //Aplica efectos del tile
-                map.ApplyEffectsOnTile(finalXPosition, finalYPosition);
+                map.ApplyEffectsOnTile(finalXPosition, finalYPosition, this);
             }
         }
     }
