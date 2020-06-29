@@ -15,5 +15,8 @@ Inspired by [Unity's Official 2D Roguelike Tutorial](https://learn.unity.com/pro
 * Interfaces
 * Scriptable Objects
 
-### Other Class Projects
+### Class Projects
 * [Basic 3D Game - Introductory Level](https://github.com/MarcoElz/Unity-Basic3D)
+* [Space Shooter 2D - Basic Level](https://github.com/MarcoElz/Unity_SpaceShooter2D)
+* [Grid-based Roguelike - Basic-Intermediate Level](https://github.com/MarcoElz/Unity-GridRoguelike)
+* [Tower Defense Game - Intermediate Level](https://github.com/MarcoElz/Unity-TowerDefense)
